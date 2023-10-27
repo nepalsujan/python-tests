@@ -19,7 +19,7 @@
 # if "2023-07-15T03:04:15.085Z" > today:
 #     print (True)
 import pytz
-from datetime import datetime
+from datetime import date, datetime, timedelta, timezone
 tz = pytz.timezone('Asia/Kuala_Lumpur')
 #from end user
 a = datetime(2023, 7, 10)
@@ -38,6 +38,18 @@ else :
     print("invalid")
 
 
+#used in mmp 
 
+default_timezone = timezone(timedelta(hours=8))
 
+naive_time= datetime.now()
+timezone_aware = datetime.now(default_timezone).date()
+
+# print (timezone_aware)
+# print (naive_time)
+# print (timezone_aware)
+
+date_aware = date.today()
+
+print (date_aware == timezone_aware)
 
